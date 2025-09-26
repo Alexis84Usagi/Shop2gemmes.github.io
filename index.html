@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Boutique Gemmes Brawl Stars - 2000 Gemmes</title>
   <!-- SDK PayPal avec votre Client ID et en Euros -->
-  <script src="https://www.paypal.com/sdk/js?client-id=AcnFLu-nck8-AOefovb8YxCTVQVz3UHp24kCyBxjKq24becW75_XL13olOiA3HjtFc1RKQr0s6VdULAg&currency=EUR"></script>
+  <script src="https://www.paypal.com/sdk/js?client-id=Ae_GKG2rz2BM2savO8rYVh2A3rTSnL_uZ94CMGBEUz3JLjvnbODBH__vnkKtiUzXP3H93_qOrq0g42SS&currency=EUR"></script>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Lilita+One&family=Nunito:wght@600;700;800;900&display=swap');
     
@@ -313,7 +313,7 @@
         return actions.order.create({
           purchase_units: [{
             amount: {
-              value: '5.00' // Prix en euros
+              value: '150.00' // Prix en euros
             },
             description: "2000 Gemmes Brawl Stars - Pack Premium"
           }]
@@ -349,7 +349,7 @@
 
       // Quand l'utilisateur annule
       onCancel: function(data) {
-        alert("❌ Paiement annulé. Vos gemmes vous attendent!");
+        alert("❌ Paiement annulé.");
       }
     }).render('#paypal-button-container');
   </script>
