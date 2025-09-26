@@ -4,43 +4,18 @@
   <meta charset="UTF-8">
   <title>Paiement avec PayPal</title>
   <!-- SDK PayPal avec ton Client ID et en Euros -->
- <script src="https://www.paypal.com/sdk/js?client-id=BAAJ0cEoP0yRkxv3F9_n50Yf6VXIik0C_lsfQBijP3Pyr9jcqmvugqUPQn3qJwaes4puJR3aeS17E0uu90&components=hosted-buttons&disable-funding=venmo&currency=EUR"></script>
+<script 
+  src="https://www.paypal.com/sdk/js?client-id=BAAJ0cEoP0yRkxv3F9_n50Yf6VXIik0C_lsfQBijP3Pyr9jcqmvugqUPQn3qJwaes4puJR3aeS17E0uu90&components=hosted-buttons&disable-funding=venmo&currency=EUR">
+</script>
 </head>
 <body>
   <h1>Paiement sécurisé avec PayPal</h1>
-  
-  <!-- Conteneur pour le bouton PayPal -->
-  <div id="paypal-button-container"></div>
 
-  <script>
-    paypal.Buttons({
-      // Création de la commande (prix, description, etc.)
-      createOrder: function(data, actions) {
-        return actions.order.create({
-          purchase_units: [{
-            amount: {
-              value: '15.00' // 💰 Montant en euros
-            },
-            description: "Achat sur mon site"
-          }]
-        });
-      },
-
-      // Quand le paiement est validé par le client
-      onApprove: function(data, actions) {
-        return actions.order.capture().then(function(details) {
-          alert('Merci ' + details.payer.name.given_name + '! Paiement de ' + details.purchase_units[0].amount.value + ' EUR réussi ✅');
-          // 👉 Ici tu peux rediriger vers une page de confirmation
-          // window.location.href = "/merci.html";
-        });
-      },
-
-      // Gestion des erreurs
-      onError: function(err) {
-        console.error(err);
-        alert("Une erreur est survenue, merci de réessayer.");
-      }
-    }).render('#paypal-button-container'); // Rend le bouton PayPal
-  </script>
+  <div id="paypal-container-Y7PWJTXGAXADU"></div>
+<script>
+  paypal.HostedButtons({
+    hostedButtonId: "Y7PWJTXGAXADU",
+  }).render("#paypal-container-Y7PWJTXGAXADU")
+</script>
 </body>
 </html>
